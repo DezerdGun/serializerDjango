@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "title": "New topic - 1",
+        "author": "Bexruz",
+        "published_date": "2024-01-01"
+    },
+    {
+        "id": 2,
+        "title": "New topic - 2",
+        "author": "Imbroxim",
+        "published_date": "2024-01-01"
+    },
+    {
+        "id": 3,
+        "title": "New topic - 3",
+        "author": "Amir",
+        "published_date": "2024-01-01"
+    }
+]
