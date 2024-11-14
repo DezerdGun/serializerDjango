@@ -52,5 +52,25 @@ class BookDetailView(APIView):
         return Response({"message","Id is deleted sucessfule"},status=status.HTTP_204_NO_CONTENT)
     
     
+    def put(self,request,book_id):
+        print(1)
+        data = read_data()
+        book = self.get_object(book_id)
+        if book is None:
+            return Response({"error":"Book is not defined"},
+                            status=status.HTTP_404_NOT_FOUND)
+        serialize = DataSerializer(data = request.data)
+        if serialize.is_valid():
+            update_book = serialize.data  
+            update_book['id'] = book_id
+            for i,b in enumerate(data):
+                if b['id'] == book_id:
+                    data[i] = update_book
+            write_data(data)
+            return Response(update_book)
+        return Response(serialize.errors,
+                        status=status.HTTP_400_BAD_REQUEST)         
+    
+    
     
     
